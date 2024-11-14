@@ -6,4 +6,4 @@ Then one just needs to add relevant information to [input file](https://github.c
 
 `cwltool 5-json_file_transfer_tool.cwl 5-json_file_transfer_input.json`
 
-which sends **metadata** to [this website](https://fwksimulationlogger.fz-rossendorf.de/login ).
+which sends **metadata** to [this website](https://fwksimulationlogger.fz-rossendorf.de/login).
