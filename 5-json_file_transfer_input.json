@@ -1,0 +1,16 @@
+{
+  "directory_path": {
+    "class": "Directory",
+    "path": "/home/afshar87/afshari/simulation/simulation_auto/testPICMI-v2/lwfa_ionization_v2"
+    },
+    "api_key_file": {
+    "class": "File",
+    "path": "/home/afshar87/afshari/simulation/simulation_auto/api_key.txt"
+    },
+    "upload_type": "PIConGPU",
+    "username": "afshar87",
+    "json_file_name": "pypicongpu.json",
+    "description": "lwfa",
+    "keywords": ["simulation", "lwfa", "electron", "custom_template"]
+  }
+  
