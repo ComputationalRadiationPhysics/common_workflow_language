@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 This repository provides an automated framework for managing data flow at various stages using the [Common Workflow Language (CWL)](https://www.commonwl.org/). It allows seamless integration of processes and tasks in scientific workflows.
 To be able to use it, first one needs to install CWL on the system as well explained [here](https://github.com/mafshari64/common_workflow_language/blob/main/how%20to%20install%20Common%20Workflow%20Language_cwl.txt).
 Each step contains:
@@ -7,14 +6,6 @@ Each step contains:
 - a tool.cwl file written in the CWL language that reads inputs from the .json file, runs the Python code and processes all steps defined there. Importantly, one should define the **FULL** path of the Python code used in each .cwl file, e.g.
 [`baseCommand` in 1-git_clone_picongpu_tool.cwl](https://github.com/mafshari64/common_workflow_language/blob/main/1-git_clone_picongpu_tool.cwl#L4).  
 To run a step, one just needs to open a terminal where these files are present and type in the command line cwltool, relevant .cwl and .json files, e.g.:
-=======
-This repository provides an automated framework for managing data flow at various stages using the Common Workflow Language (CWL). It allows seamless integration of processes and tasks in scientific workflows.
-To be able to use it, first one needs to install CWL on the system as well explained in [here](https://github.com/mafshari64/common_workflow_language/blob/main/how%20to%20install%20Common%20Workflow%20Language_cwl.txt).
-Afterward, define the full path for the [python code](https://github.com/mafshari64/common_workflow_language/blob/main/5-json_file_transfer.py) for [this file](https://github.com/mafshari64/common_workflow_language/blob/main/5-json_file_transfer_tool.cwl).
-Then one just needs to add relevant information to [input file](https://github.com/mafshari64/common_workflow_language/blob/main/5-json_file_transfer_input.json) and on the command line run 
-
-cwltool 5-json_file_transfer_tool.cwl 5-json_file_transfer_input.json
->>>>>>> 9bfa702 (Update README.md)
 
 `cwltool 5-json_file_transfer_tool.cwl 5-json_file_transfer_input.json`
 
