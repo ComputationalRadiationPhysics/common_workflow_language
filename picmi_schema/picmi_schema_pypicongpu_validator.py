@@ -5,7 +5,7 @@ import json
 import os
 
 schema_path = "picmi_schema.json"
-pypicongpu_json_path = "./testPICMI-v2/picmi_inputfile_ionization-v2.py"
+pypicongpu_json_path = "/home/afshar87/afshari/simulation/simulation_auto/testPICMI-v2/picmi_inputfile_ionization-v2.py"
 # pypicongpu_json_path = "./testPICMI-v2/lwfa_ionization_v2/pypicongpu.json"
  
 # print("File exists:", os.path.exists(schema_path))
