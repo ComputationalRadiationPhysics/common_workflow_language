@@ -1,3 +1,6 @@
+# this python code checks if the directory containing the pypicongpu.json file is presents and if yes removes it before running the simulation as it is a prerequisite for PIConGPU simulation.
+
+
 import os
 import sys
 
