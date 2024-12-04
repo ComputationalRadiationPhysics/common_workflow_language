@@ -17,4 +17,4 @@ outputs:
   log_file:
     type: stdout
 
-stdout: output-check_pypicongpuJSON_directory_name.txt
+stdout: output_check_pypicongpuJSON_directory_name.txt

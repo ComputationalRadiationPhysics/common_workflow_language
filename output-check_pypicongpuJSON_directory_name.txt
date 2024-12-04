@@ -1,2 +1,0 @@
-Removing existing output directory: /home/afshar87/afshari/simulation/simulation_auto/testPICMI-v2/lwfa_ionization_v2-copy
-SUCCESS: Removing existing output directory
