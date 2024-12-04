@@ -1,4 +1,6 @@
 
+# -*- coding: utf-8 -*-
+
 import subprocess
 import sys
 import os
@@ -36,14 +38,12 @@ description = args.description
 keywords = args.keywords
 
 
-###
-# -*- coding: utf-8 -*-
 
 BASE_URL = 'fwksimulationlogger.fz-rossendorf.de'
 api_url = 'https://{}/api/upload'.format(BASE_URL)
 
-path_to_data = '{}/{}'.format(directory_path, json_file_name)
-print(f"Path to data: {path_to_data}")
+path_to_data = os.path.join(directory_path, json_file_name)
+print("Path to data: {}".format(path_to_data))
 
 # Read the API key from the text file
 with open(api_key_file, 'r') as file:
@@ -55,12 +55,16 @@ with open(api_key_file, 'r') as file:
 # install required packages
 def install_package(package_name):
     """Install the specified package using pip."""
+
+    print("Installing {} using {}...".format(package_name, sys.executable))
     try:
         subprocess.check_call([sys.executable, '-m', 'pip', 'install', package_name])
         print("{} installed successfully.".format(package_name))
     except subprocess.CalledProcessError as e:
         print("Failed to install {}: {}".format(package_name, e))
-
+    except Exception as e:
+        print(f"Unexpected error during installation: {e}")
+        
 def main():
     """Check and install the requests package."""
     try:
@@ -69,7 +73,11 @@ def main():
     except ImportError:
         print("requests not found. Installing...")
         install_package('requests')
-
+        # Try to import again after installation
+        if 'requests' not in sys.modules:
+            import requests
+            print("requests installed and imported successfully.")
+            
 if __name__ == "__main__":
     main()
 

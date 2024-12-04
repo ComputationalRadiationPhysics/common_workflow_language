@@ -1,20 +1,20 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-baseCommand: ["python", "/home/afshar87/afshari/simulation/simulation_auto/cwl_workflow/5-json_file_transfer.py"]
+baseCommand: ["python3", "/home/afshar87/afshari/simulation/simulation_auto/cwl_workflow/5-json_file_transfer.py"]
 
 inputs:
   directory_path:
     type: Directory
     inputBinding:
       prefix: "--directory_path"  # Pass the directory as a command-line argument
-      loadContents: true  # Loads the directory content
+      # loadContents: true  # pass the contents of the file or directory as input, not just their paths.
 
   api_key_file:
     type: File
     inputBinding:
       prefix: "--api_key_file"  # Pass the file as a command-line argument
-      loadContents: true  # Ensures the content of the file is passed as argument
+      # loadContents: true  # pass the contents of the file or directory as input, not just their paths.
 
   upload_type:
     type: string
@@ -45,10 +45,16 @@ inputs:
       prefix: "--keywords"  # Prefix used to handle the list as separate arguments
       separate: true  # Correctly specify 'true' to separate the list items into individual arguments
       
-outputs:
-  upload_output:
-    type: File
-    outputBinding:
-      glob: "upload_response.txt"  # path to the output file
+# outputs:
+#   upload_output:
+#     type: File
+#     outputBinding:
+#       glob: "upload_response.txt"  # path to the output file
 
-stdout: upload_response.txt  # Standard output (stdout): Capture the terminal output in a text file
+# stdout: upload_response.txt  # Standard output (stdout): Capture the terminal output in a text file
+
+outputs:
+  setup_log:
+    type: stdout  # Capture the output log from stdout
+
+stdout: output_upload_metadata.txt  # Redirect standard output to this file
