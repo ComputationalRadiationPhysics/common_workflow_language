@@ -12,7 +12,7 @@ inputs:
     type: string
     inputBinding:
       position: 2  # Pass the repo directory as the second argument
-  picongpu_input_json:
+  txt:
     type: string
     inputBinding:
       position: 3  # Pass the log file path as the third argument

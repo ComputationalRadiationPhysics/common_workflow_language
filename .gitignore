@@ -2,3 +2,5 @@ upload_response.txt
 activate Common Workflow Language_cwl.txt
 picongpu/
 picmi/
+output_*
+4-*
