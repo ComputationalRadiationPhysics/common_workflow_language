@@ -4,7 +4,7 @@ Each step contains:
 
 - a Python code doing the tasks.
 - a tool.cwl file written in the CWL language that reads inputs from the .json file, runs the Python code and processes all steps defined there. Importantly, one should define the **FULL** path for the Python code used in each .cwl file, e.g.
-[View the `baseCommand` in 1-git_clone_picongpu_tool.cwl](https://github.com/mafshari64/common_workflow_language/blob/main/1-git_clone_picongpu_tool.cwl#L4).  
+[`baseCommand` in 1-git_clone_picongpu_tool.cwl](https://github.com/mafshari64/common_workflow_language/blob/main/1-git_clone_picongpu_tool.cwl#L4). View the 
 - an input.json file containing required input information, e.g. [input.json file](https://github.com/mafshari64/common_workflow_language/blob/main/1-git_clone_picongpu_input.json) determines the path for cloning the PIConGPU [picongpu_git_path](https://github.com/mafshari64/common_workflow_language/blob/main/1-git_clone_picongpu_input.json#L2C6-L2C23), where to save in your local director [picongpu_local_dir](https://github.com/mafshari64/common_workflow_language/blob/main/1-git_clone_picongpu_input.json#L3C6-L3C24) and where the output file of tool.cwl file [picongpu_input_json]()
 
 - 
