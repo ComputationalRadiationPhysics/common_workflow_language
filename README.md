@@ -3,7 +3,7 @@ To be able to use it, first one needs to install CWL on the system as well expla
 Each step contains:
 - an input.json file containg required input information.
 
-Afterward, one should define the full path for the [python code](https://github.com/mafshari64/common_workflow_language/blob/main/5-json_file_transfer.py) for [this file](https://github.com/mafshari64/common_workflow_language/blob/main/5-json_file_transfer_tool.cwl).
+Afterward, to use one of them, one should define the **FULL** path for the Python code used for each step, e.g. [python code](https://github.com/mafshari64/common_workflow_language/blob/main/5-json_file_transfer.py) for [this .cwl file](https://github.com/mafshari64/common_workflow_language/blob/main/5-json_file_transfer_tool.cwl).
 Then one just needs to add relevant information to [input file](https://github.com/mafshari64/common_workflow_language/blob/main/5-json_file_transfer_input.json) and on the command line run 
 
 
