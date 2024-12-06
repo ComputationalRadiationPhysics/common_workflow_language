@@ -12,7 +12,7 @@ inputs:
     type: string
     inputBinding:
       position: 2  # Pass the repo directory as the second argument
-  picmi_input_json:
+  cwl_output_file:
     type: string
     inputBinding:
       position: 3  # Pass the log file path as the third argument
