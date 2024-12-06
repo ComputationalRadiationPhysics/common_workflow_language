@@ -3,11 +3,11 @@ import subprocess
 import sys
 
 # Function to check if the repo is cloned
-def check_and_clone_repo(git_url, picmi_local_dir, picmi_input_json):
+def check_and_clone_repo(picmi_git_path, picmi_local_dir, picmi_input_json):
     print(f"Current working directory: {os.getcwd()}")  # Log the current working directory
     if not os.path.isdir(picmi_local_dir):
-        print(f"Cloning PICMI repository from {git_url} into {picmi_local_dir}...")
-        subprocess.run(['git', 'clone', git_url, picmi_local_dir], stdout=open(picmi_input_json, 'w'), stderr=subprocess.STDOUT)
+        print(f"Cloning PICMI repository from {picmi_git_path} into {picmi_local_dir}...")
+        subprocess.run(['git', 'clone', picmi_git_path, picmi_local_dir], stdout=open(picmi_input_json, 'w'), stderr=subprocess.STDOUT)
     else:
         print(f"PICMI repository already exists in {picmi_local_dir}. Checking for updates...")
         os.chdir(picmi_local_dir)

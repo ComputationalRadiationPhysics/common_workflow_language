@@ -3,11 +3,11 @@ import subprocess
 import sys
 
 # Function to check if the repo is cloned
-def check_and_clone_repo(git_url, picongpu_local_dir, picongpu_input_json):
+def check_and_clone_repo(picongpu_git_path, picongpu_local_dir, picongpu_input_json):
     print(f"Current working directory: {os.getcwd()}")  # Log the current working directory
     if not os.path.isdir(picongpu_local_dir):
-        print(f"Cloning PIConGPU repository from {git_url} into {picongpu_local_dir}...")
-        subprocess.run(['git', 'clone', git_url, picongpu_local_dir], stdout=open(picongpu_input_json, 'w'), stderr=subprocess.STDOUT)
+        print(f"Cloning PIConGPU repository from {picongpu_git_path} into {picongpu_local_dir}...")
+        subprocess.run(['git', 'clone', picongpu_git_path, picongpu_local_dir], stdout=open(picongpu_input_json, 'w'), stderr=subprocess.STDOUT)
     else:
         print(f"PIConGPU repository already exists in {picongpu_local_dir}. Checking for updates...")
         os.chdir(picongpu_local_dir)

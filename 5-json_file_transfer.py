@@ -1,12 +1,14 @@
+import sys
+print("Python executable:", sys.executable)
+print("Python version:", sys.version)
+print("Python path:", sys.path)
+import sys
+sys.path.append('/home/afshar87/.local/lib/python3.6/site-packages')
 
-# -*- coding: utf-8 -*-
-
+import argparse # to handle command-line arguments in Python 
 import subprocess
 import sys
 import os
-import requests
-import json
-import argparse # to handle command-line arguments in Python 
 
 ##### Configuration
 # to create an api_key visit: https://fwksimulationlogger.fz-rossendorf.de/login
@@ -55,16 +57,16 @@ with open(api_key_file, 'r') as file:
 # install required packages
 def install_package(package_name):
     """Install the specified package using pip."""
-
-    print("Installing {} using {}...".format(package_name, sys.executable))
+    print(f"Installing {package_name} using {sys.executable}...")
     try:
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', package_name])
-        print("{} installed successfully.".format(package_name))
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--user', package_name])
+        print(f"{package_name} installed successfully.")
     except subprocess.CalledProcessError as e:
-        print("Failed to install {}: {}".format(package_name, e))
+        print(f"Failed to install {package_name}: {e}")
     except Exception as e:
         print(f"Unexpected error during installation: {e}")
-        
+
+
 def main():
     """Check and install the requests package."""
     try:
@@ -82,7 +84,13 @@ if __name__ == "__main__":
     main()
 
 
+# IMPORTANT: since some required packages are not installed by default (eg requests), first we should install them hence import section comes after packages installations.
 
+
+import requests
+import json
+
+# -*- coding: utf-8 -*-
 ### for debugging: List files in the directory for debugging
 # print("Listing files in directory:", directory_path)
 # for filename in os.listdir(directory_path):

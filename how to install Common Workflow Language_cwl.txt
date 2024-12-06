@@ -18,7 +18,10 @@ python3 -m pip install --user cwltool
 
 The --user flag ensures that the package is installed for your user account without requiring admin privileges.
 
--"psutil" error
+*** requests package error 
+python3.6 -m pip install --user requests 
+
+*** "psutil" error
 you might see a "psutil" error. The error you're encountering indicates that the Python header files required to build the psutil package are missing.
 These files are necessary for compiling C extensions, which is what psutil needs.
 

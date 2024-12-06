@@ -1,0 +1,8 @@
+{
+    "profile_name": "fwkt_v100_picongpu.profile",
+    "new_my_mail": "m.afshari@hzdr.de",
+    "new_my_mailnotify": "ALL",
+    "picsrc": "/home/afshar87/afshari/simulation/simulation_auto/cwl_workflow/picongpu",
+    "tbg_partition": "casus",
+    "simulation_output_path": "/bigdata/hplsim/external/afshar87"
+}
