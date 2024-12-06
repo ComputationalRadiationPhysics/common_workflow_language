@@ -1,5 +1,4 @@
 {
     "picongpu_git_path": "https://github.com/ComputationalRadiationPhysics/picongpu.git",
-    "picongpu_local_dir": "/home/afshar87/afshari/simulation/simulation_auto/cwl_workflow/picongpu",
-    "cwl_output_file": "/home/afshar87/afshari/simulation/simulation_auto/cwl_workflow/output_clone_picongpu.txt"
+    "picongpu_local_dir": "/home/afshar87/afshari/simulation/simulation_auto/cwl_workflow/picongpu"
   }

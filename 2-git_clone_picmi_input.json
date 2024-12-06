@@ -1,5 +1,4 @@
 {
   "picmi_git_path": "https://github.com/picmi-standard/picmi.git",
-  "picmi_local_dir": "/home/afshar87/afshari/simulation/simulation_auto/cwl_workflow/picmi",
-  "cwl_output_file": "/home/afshar87/afshari/simulation/simulation_auto/cwl_workflow/output_clone_picmi.txt"
+  "picmi_local_dir": "/home/afshar87/afshari/simulation/simulation_auto/cwl_workflow/picmi"
 }
