@@ -1,53 +1,22 @@
-To be able to run a common workflow language file (with .cwl format) one needs to install cwltool.
-cwltool requires Python 3. So, you will need to upgrade your Python at least to version 3.x. Here’s how to do it:
-On Supercomputer open a terminal and type:
+To run a common workflow language file (.cwl files), one must install cwltool which requires Python 3. So, We you need to upgrade the Python at least to version 3.x. To do that open a terminal and type:
 
-which python
 which python3
 
-This will show you the location of any installed Python versions. If python3 is installed, 
-it will show the path where it's located. 
-If Python 3 is installed, you can also check the packages available for Python 3. For example:
+It will show the path and location where the python3 is located. If Python 3 is installed, you can also check the packages available for Python 3. For example:
 
 python3 -m pip --version
 
 This will confirm if pip is installed for Python 3, which is necessary for installing other packages (like cwltool).
-If you have pip installed for Python 3, you can install CWL tools (e.g., cwltool) by running:
+If pip is installed for Python 3, you can install CWL tools (cwltool) by running:
 
 python3 -m pip install --user cwltool
 
-The --user flag ensures that the package is installed for your user account without requiring admin privileges.
+The --user flag ensures the package is installed for your user account without requiring admin privileges.
 
-*** requests package error 
-python3.6 -m pip install --user requests 
+Also, we need to load required modules, e.g. git. open the terminal and type
 
-*** "psutil" error
-you might see a "psutil" error. The error you're encountering indicates that the Python header files required to build the psutil package are missing.
-These files are necessary for compiling C extensions, which is what psutil needs.
+module load git
 
+which shows all available git modules. just load one of them. To confirm which git is loaded on the terminal type: 
 
-You can create a virtual environment for Python and install the necessary packages there, which won’t require sudo privileges.
-
-python3 -m venv myenv
-
-then Activate the virtual environment (after log out, every time you want to run cwl files you need to load this env first):
-
-source ~/myenv/bin/activate
-
-First, upgrade pip inside your virtual environment:
-
-pip install --upgrade pip
-
-try to install psutil again:
- 
-pip install psutil
-
-Now install cwltool (CWL reference implementation) using pip:
-
-pip install cwltool
-
-Once installed, you can verify the installation by running the following:
-
-cwltool --version
-
-If you see the version of cwltool, it means the installation was successful.
+git --version
