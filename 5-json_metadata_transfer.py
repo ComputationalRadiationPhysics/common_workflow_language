@@ -2,12 +2,10 @@ import sys
 print("Python executable:", sys.executable)
 print("Python version:", sys.version)
 print("Python path:", sys.path)
-import sys
 sys.path.append('/home/afshar87/.local/lib/python3.6/site-packages')
 
 import argparse # to handle command-line arguments in Python 
 import subprocess
-import sys
 import os
 
 ##### Configuration
@@ -20,22 +18,22 @@ import os
 # Create an argument parser
 parser = argparse.ArgumentParser(description='Process input for file transfer.')
 
+
 # Add expected arguments
+parser.add_argument('--json_file_path', required=True, help='Full path to the JSON file')
 parser.add_argument('--api_key_file', required=True, help='Path to the API key file')
-parser.add_argument('--upload_type', default='PIConGPU_cwtool', help='Upload type')
+parser.add_argument('--upload_type', default='PIConGPU', help='Upload type')
 parser.add_argument('--username', default='afshar87', help='Username')
-parser.add_argument('--directory_path', required=True, help='Directory path containing the JSON file')
-parser.add_argument('--json_file_name', default='pypicongpu.json', help='Name of the JSON file')
 parser.add_argument('--description', required=True, help='Description for the upload')
 parser.add_argument('--keywords', nargs='+', help='Keywords for the upload')
+
 args = parser.parse_args()
 
 # Access the arguments
+json_file_path = args.json_file_path
 api_key_file = args.api_key_file
 upload_type = args.upload_type
 username = args.username
-directory_path = args.directory_path
-json_file_name = args.json_file_name
 description = args.description
 keywords = args.keywords
 
@@ -44,8 +42,7 @@ keywords = args.keywords
 BASE_URL = 'fwksimulationlogger.fz-rossendorf.de'
 api_url = 'https://{}/api/upload'.format(BASE_URL)
 
-path_to_data = os.path.join(directory_path, json_file_name)
-print("Path to data: {}".format(path_to_data))
+print("Path to data: {}".format(json_file_path))
 
 # Read the API key from the text file
 with open(api_key_file, 'r') as file:
@@ -88,7 +85,6 @@ if __name__ == "__main__":
 
 
 import requests
-import json
 
 # -*- coding: utf-8 -*-
 ### for debugging: List files in the directory for debugging
@@ -97,20 +93,19 @@ import json
 #     print(filename)
 
 # Verify the file exists
-if not os.path.isfile(path_to_data):
-    raise IOError("The file at {} does not exist.".format(path_to_data))
+if not os.path.isfile(json_file_path):
+    raise IOError("The file at {} does not exist.".format(json_file_path))
 
 # Prepare the data and file for the request
 data = {
     'upload_type': upload_type,
-    'path_to_data': path_to_data,
     'description': description,
     'keywords': ','.join(keywords),
     'username': username  # Add username here
 }
 
 files = {
-    'metadataFile': open(path_to_data, 'rb')  # Assuming 'metadataFile' is the correct key
+    'metadataFile': open(json_file_path, 'rb')  # Assuming 'metadataFile' is the correct key
 }
 
 # Prepare headers
