@@ -9,4 +9,4 @@ To run a step, one just needs to open a terminal where these files are present a
 
 `cwltool 5-json_file_transfer_tool.cwl 5-json_file_transfer_input.json`
 
-which sends **metadata** to [this website](https://fwksimulationlogger.fz-rossendorf.de/login).
+which sends **metadata** to [this website](https://fwksimulationlogger.fz-rossendorf.de/login). We can also send files to the website using 6-file_transfer_tool.cwl.
